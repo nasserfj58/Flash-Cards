@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, TextInput } from 'react-native';
+import {Text, View, TextInput,TouchableOpacity } from 'react-native';
 
 export default class AddCard extends React.Component{
   state = {
@@ -12,6 +12,9 @@ export default class AddCard extends React.Component{
         deckValue:inputText
       })
     }
+  }
+  submitCard = ()=>{
+
   }
   render(){
     return(
@@ -28,6 +31,7 @@ export default class AddCard extends React.Component{
           placeholder='Enter Answer'
           onChangeText = {inputText=>{if(inputText) this.setState({answer:inputText})}}
         />
+        <TouchableOpacity onPress={this.submitCard}><Text>Submit</Text></TouchableOpacity>
       </View>
     )
   }
