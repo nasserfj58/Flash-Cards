@@ -3,7 +3,7 @@ import {Text, View, TextInput } from 'react-native';
 
 export default class AddCard extends React.Component{
   state = {
-    deckValue = ''
+    deckValue: ''
   }
   hanldeChange = (inputText)=>{
   if(inputText){
@@ -17,7 +17,7 @@ export default class AddCard extends React.Component{
       <View>
         <Text>Deck Name:</Text>
         <TextInput
-          value={deckValue}
+          value={this.state.deckValue}
           placeholder='Enter Deck Name'
           onChangeText = {inputText=>this.hanldeChange(inputText)}
         />
