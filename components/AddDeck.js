@@ -1,7 +1,7 @@
 import React from 'react';
-import {Text, View, TextInput } from 'react-native';
+import {Text, View, TextInput,TouchableOpacity } from 'react-native';
 
-export default class AddDeck extends React.Component{
+export default class AddCard extends React.Component{
   state = {
     deckValue: ''
   }
@@ -12,6 +12,10 @@ export default class AddDeck extends React.Component{
       })
     }
   }
+  submitDeck = ()=>{
+
+
+  }
   render(){
     return(
       <View>
@@ -21,6 +25,7 @@ export default class AddDeck extends React.Component{
           placeholder='Enter Deck Name'
           onChangeText = {inputText=>this.hanldeChange(inputText)}
         />
+        <TouchableOpacity onPress={this.submitDeck}><Text>Submit</Text></TouchableOpacity>
       </View>
     )
   }
