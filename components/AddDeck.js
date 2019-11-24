@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, View, TextInput } from 'react-native';
 
-export default class AddCard extends React.Component{
+export default class AddDeck extends React.Component{
   state = {
     deckValue: ''
   }
