@@ -1,29 +1,43 @@
 import React from 'react';
-import {Text, View, TextInput,TouchableOpacity } from 'react-native';
+import { Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { connect } from 'react-redux'
+import {addDeck} from '../actions/index'
+import { insertDeck } from '../util/api'
 
-export default class AddCard extends React.Component{
+class AddDeck extends React.Component {
   state = {
     deckValue: ''
   }
-  hanldeChange = (inputText)=>{
-  if(inputText){
+  hanldeChange = (inputText) => {
+    if (inputText) {
       this.setState({
-        deckValue:inputText
+        deckValue: inputText
       })
     }
   }
-  submitDeck = ()=>{
+  submitDeck = () => {
+    // this code idea obtained from :https://stackoverflow.com/questions/8012002/create-a-unique-number-with-javascript-time
+    const deckKey = parseInt(Date.now() + Math.random())
+    const deck = this.state.deckValue
+
+    this.props.dispatch((addDeck({
+      [deckKey]: deck
+    })))
+
+    this.setState({ deckValue: '' })
+
+    insertDeck({ deck:deck, deckKey:deckKey })
 
 
   }
-  render(){
-    return(
+  render() {
+    return (
       <View>
         <Text>Deck Name:</Text>
         <TextInput
           value={this.state.deckValue}
           placeholder='Enter Deck Name'
-          onChangeText = {inputText=>this.hanldeChange(inputText)}
+          onChangeText={inputText => this.hanldeChange(inputText)}
         />
         <TouchableOpacity onPress={this.submitDeck}><Text>Submit</Text></TouchableOpacity>
       </View>
@@ -31,3 +45,10 @@ export default class AddCard extends React.Component{
   }
 
 }
+function mapStateToProps(state){
+  console.log(state)
+  return({
+  }
+  )
+}
+export default connect(mapStateToProps)(AddDeck)

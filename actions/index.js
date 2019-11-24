@@ -1,28 +1,31 @@
-import {ADD_DECK, ADD_CARD, GET_DECKS, GET_CARDS} from '../actions/index'
+export const ADD_DECK = 'ADD_DECK'
+export const ADD_CARD = 'ADD_CARD'
+export const GET_DECKS = 'GET_DECKS'
+export const GET_CARDS = 'GET_CARDS'
 
-export default function quesions(state={},action){
-  switch(action.type){
-    case ADD_DECK: 
-      return ({
-        ...state,
-        ...action.deck
-      })
-      case ADD_CARD: 
-      return ({
-        ...state,
-        ...action.card
-      })
-      case GET_DECKS: 
-      return ({
-        ...state,
-        ...action.decks
-      })
-       case GET_CARDS: 
-      return ({
-        ...state,
-        ...action.cards
-      })
-      default: 
-        return state
+export function addDeck (deck) {
+  return {
+    type: ADD_DECK,
+    deck,
   }
 }
+export function addCard (card) {
+  return {
+    type: ADD_CARD,
+    card,
+  }
+}
+
+export function getDecks (decks) {
+  return {
+    type: GET_DECKS,
+    decks,
+  }
+}
+export function getCards (cards) {
+  return {
+    type: GET_CARDS,
+    cards,
+  }
+}
+
