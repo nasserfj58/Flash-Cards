@@ -7,10 +7,17 @@ export default function quesions(state={},action){
         ...state,
         ...action.deck
       })
-      case ADD_CARD: 
+      case ADD_CARD:
+
       return ({
         ...state,
-        ...action.card
+        [action.card["deckId"]]: {
+          ...state[action.card["deckId"]],
+          cards: [
+            ...state[action.card["deckId"]]["cards"],
+            action.card
+          ]
+        }
       })
       case GET_DECKS: 
       return ({
