@@ -18,3 +18,5 @@ You need to have node and npm installed in your machine
 ### For Android : https://docs.expo.io/versions/latest/workflow/android-studio-emulator/
 ### For IOS : https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/iOS_Simulator_Guide/GettingStartedwithiOSSimulator/GettingStartedwithiOSSimulator.html
 
+### I used Google Pixel XL Simulator and EXPO on IPhone 6 and on Honor View20 to test this APP. 
+
