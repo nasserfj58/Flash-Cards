@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { Text, TouchableOpacity } from 'react-native'
 import { Container, H1, Content, Form, Body, CardItem, Card, Button, Left } from 'native-base'
-import { getDailyReminderValue, clearLocalNotification, setLocalNotification } from '../util/helper'
+import {clearLocalNotification, setLocalNotification } from '../util/helper'
 
 class Vote extends React.Component {
     state = {
