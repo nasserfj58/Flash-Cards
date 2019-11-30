@@ -1,4 +1,4 @@
-import {ADD_DECK, ADD_CARD, GET_DECKS, GET_CARDS} from '../actions/index'
+import {ADD_DECK, ADD_CARD, GET_DECKS} from '../actions/index'
 
 export default function quesions(state={},action){
   switch(action.type){
@@ -23,11 +23,6 @@ export default function quesions(state={},action){
       return ({
         ...state,
         ...action.decks
-      })
-       case GET_CARDS: 
-      return ({
-        ...state,
-        ...action.cards
       })
       default: 
         return state
