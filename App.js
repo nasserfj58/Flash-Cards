@@ -10,11 +10,10 @@ import DeckView from './components/DeckView'
 import Vote from './components/Vote'
 import { Container } from 'native-base'
 import { createAppContainer } from 'react-navigation'
-import {
-  createStackNavigator,
-} from 'react-navigation-stack'
-import { createBottomTabNavigator } from 'react-navigation-tabs';
+import { createStackNavigator, } from 'react-navigation-stack'
+import { createBottomTabNavigator } from 'react-navigation-tabs'
 import { Ionicons } from '@expo/vector-icons'
+import { setLocalNotification } from './util/helper'
 
 const Tabs = createBottomTabNavigator({
   DeckList: {
@@ -36,9 +35,9 @@ const Tabs = createBottomTabNavigator({
   tabBarOptions: {
     activeTintColor: 'black',
     labelStyle: {
-      fontSize: 20,
-      paddingBottom: 10,
-      paddingTop: 10,
+      fontSize: 8,
+      paddingBottom: 5,
+      paddingTop: 5,
       fontWeight: 'bold',
     }
   }
@@ -58,14 +57,19 @@ const Stack = createStackNavigator({
 });
 
 const Navigator = createAppContainer(Stack);
-export default function App() {
-  return (
-    <Provider store={createStore(reducer)}>
-      <Container>
-        <Navigator />
-      </Container>
-    </Provider>
-  );
+export default class App extends React.Component {
+  componentDidMount() {
+    setLocalNotification()
+  }
+  render() {
+    return (
+      <Provider store={createStore(reducer)}>
+        <Container>
+          <Navigator />
+        </Container>
+      </Provider>
+    )
+  }
 }
 
 
