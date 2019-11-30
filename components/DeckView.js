@@ -23,8 +23,13 @@ class DeckView extends React.Component {
                             </CardItem>
                             <CardItem>
                                 <Body>
+                                    <Button style={{ marginTop: 30 }} block light disabled={counter == 0} onPress={() => {
+                                        this.props.navigation.navigate('Vote', {
+                                            deckId: navigation.getParam('deckId', 'ERROR'),
+                                            deckName: navigation.getParam('deckName', 'ERROR')
 
-                                    <Button style={{ marginTop: 30 }} block light disabled={counter == 0}>
+                                        });
+                                    }}>
                                         <Text style={{ fontSize: 20 }}>Star Quiz </Text>
                                     </Button>
                                     <Button style={{ marginTop: 30 }} block light onPress={() => {

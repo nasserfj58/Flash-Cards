@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text,View, TextInput, TouchableOpacity,StyleSheet,KeyboardAvoidingView } from 'react-native';
+import {Text,StyleSheet } from 'react-native';
 import {connect} from 'react-redux'
 import {addCard} from '../actions/index'
 import { Container, Content, Form, Item, Input, Label, Button } from 'native-base'

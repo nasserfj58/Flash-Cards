@@ -1,5 +1,4 @@
-import React from 'react';
-import { View } from 'react-native';
+import React from 'react'
 import { connect } from 'react-redux'
 import { getDecks } from '../actions/index'
 import { retrieveDecks } from '../util/api'

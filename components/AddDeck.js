@@ -1,9 +1,9 @@
 import React from 'react';
-import { Text, View, TextInput, TouchableOpacity, StyleSheet, KeyboardAvoidingView } from 'react-native';
+import { Text,StyleSheet } from 'react-native';
 import { connect } from 'react-redux'
 import { addDeck } from '../actions/index'
 import { insertDeck } from '../util/api';
-import { Container, Header, Content, Form, Item, Input, Label, Button,Toast } from 'native-base'
+import { Container,Content, Form, Item, Input, Label, Button } from 'native-base'
 
 
 class AddDeck extends React.Component {
