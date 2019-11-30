@@ -20,3 +20,8 @@ You need to have node and npm installed in your machine
 
 ### I used Google Pixel XL Simulator and EXPO on IPhone 6 and on Honor View20 to test this APP. 
 
+### References:
+https://nativebase.io/
+https://www.online-toolz.com/tools/text-encryption-decryption.php
+https://github.com/udacity/reactnd-UdaciFitness-complete
+
